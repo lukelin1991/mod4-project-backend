@@ -9,8 +9,10 @@ User.destroy_all
 Item.destroy_all
 Inventory.destroy_all
 Hero.destroy_all
+Shop.destroy_all
+ShopItem.destroy_all
 
-signe = User.create({username:'Signe', password_digest:'123'})
+signe = User.create!({username:'Signe', password:'123'})
 
 sword = Item.create({name: "sword", atk: 3, health: 0})
 axe = Item.create({name: "axe", atk: 3, health: 0})
