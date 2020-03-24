@@ -35,8 +35,11 @@ ActiveRecord::Schema.define(version: 2020_03_23_180251) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.integer "atk"
-    t.integer "health"
+    t.string "itemtype"
+    t.integer "damage"
+    t.integer "defense"
+    t.string "image"
+    t.integer "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,7 +47,6 @@ ActiveRecord::Schema.define(version: 2020_03_23_180251) do
   create_table "shop_items", force: :cascade do |t|
     t.integer "shop_id"
     t.integer "item_id"
-    t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
