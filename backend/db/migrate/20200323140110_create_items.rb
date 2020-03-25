@@ -2,8 +2,11 @@ class CreateItems < ActiveRecord::Migration[6.0]
   def change
     create_table :items do |t|
       t.string :name
-      t.integer :atk
-      t.integer :health
+      t.string :itemtype
+      t.integer :damage
+      t.integer :defense 
+      t.string :image
+      t.integer :value
       
       t.timestamps
     end

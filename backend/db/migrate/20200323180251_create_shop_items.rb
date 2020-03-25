@@ -3,7 +3,6 @@ class CreateShopItems < ActiveRecord::Migration[6.0]
     create_table :shop_items do |t|
       t.integer :shop_id
       t.integer :item_id
-      t.integer :price
 
       t.timestamps
     end
