@@ -1,7 +1,4 @@
 class AuthController < ApplicationController
-<<<<<<< HEAD
-    
-=======
     skip_before_action :authorized, only: [:create]
  
   def create
@@ -22,5 +19,4 @@ class AuthController < ApplicationController
     # params { user: {username: 'Chandler Bing', password: 'hi' } }
     params.permit(:username, :password)
   end
->>>>>>> tyler
 end

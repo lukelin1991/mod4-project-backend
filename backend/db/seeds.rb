@@ -12,7 +12,7 @@ Hero.destroy_all
 Shop.destroy_all
 ShopItem.destroy_all
 
-signe = User.create!({username:'Signe', password:'123'})
+signe = User.create!({username:'Signe', password:'123', gold: 1000 })
 
 # Weapons
 azurite_dagger = Item.create({name: "Azurite dagger",itemtype: "buns", damage: 3, defense: 0, image: "azurite-dagger.png", value: 100})
@@ -23,17 +23,17 @@ wood_dagger = Item.create({name: "Wood dagger",itemtype: "buns", damage: 1, defe
 # Armor 
 boots = Item.create({name: "Boots",itemtype: "Armor", damage: 0, defense: 1, image: "boots.png", value: 50})
 golden_gauntlets = Item.create({name: "Golden Gauntlets",itemtype: "Armor", damage: 0, defense: 5, image: "golden_gauntlets.png", value: 200})
-golden_sheild = Item.create({name: "Golden Sheild",itemtype: "Armor", damage: 0, defense: 8, image: "golden_sheild.png", value: 250})
-helmet = Item.create({name: "Helmet",itemtype: "Armor", damage: 0, defense: 3, image: "helmet.png", value: 100})
-platebody = Item.create({name: "Plate(body)",itemtype: "Armor", damage: 0, defense: 3, image: "platebody.png", value: 100})
-platelegs = Item.create({name: "Plate(legs)",itemtype: "Armor", damage: 0, defense: 3, image: "platelegs.png", value: 100})
+golden_shield = Item.create({name: "Golden Sheild",itemtype: "Armor", damage: 0, defense: 8, image: "golden_sheild.png", value: 250})
+helmet = Item.create({name: "Helmet",itemtype: "Armor", damage: 0, defense: 3, image: "helmet.png", value: 75})
+platebody = Item.create({name: "Plate(body)",itemtype: "Armor", damage: 0, defense: 3, image: "platebody.png", value: 125})
+platelegs = Item.create({name: "Plate(legs)",itemtype: "Armor", damage: 0, defense: 3, image: "platelegs.png", value: 85})
 wood_shield = Item.create({name: "Wood Shield",itemtype: "Armor", damage: 0, defense: 2, image: "wood_shield.png", value: 50})
 
 
 inventory = Inventory.create([{item_id: sword.id, equipt?: true},{item_id: boots.id},{item_id: helmet.id},{item_id: platebody.id}])
 
-signe.heros.create([{name: 'Luke',gold: 100, atk:5, health: 3, inventories: inventory},{name:'Leizl',gold:100,atk:5,health:3},
-    {name:'Otha',gold:100,atk:5,health:3},{name:'Eric',gold:100,atk:5,health:3},{name:'Tyler',gold:100,atk:5,health:3}])
+signe.heros.create([{name: 'Luke',value: 100, damage:5, defense: 3, health: 3, inventories: inventory},{name:'Leizl',value:100,damage:5, defense: 5,health:3},
+    {name:'Otha',value:100,damage:5,defense:1 ,health:3},{name:'Eric',value:100,damage:5, defense:8,health:3},{name:'Tyler',value:100,damage:5,defense:9,health:3}])
 
 merchandise= ShopItem.create([{item_id: sword.id},{item_id: flamberge.id},{item_id: golden_gauntlets.id},{item_id: golden_sheild.id}])
 flatirons_wares = Shop.create({name: "Flatiron Wares", shop_items: merchandise})
